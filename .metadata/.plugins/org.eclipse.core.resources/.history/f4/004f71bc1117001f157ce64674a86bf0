@@ -1,0 +1,5 @@
+package com.pro3.dto;
+
+public class Member {
+
+}

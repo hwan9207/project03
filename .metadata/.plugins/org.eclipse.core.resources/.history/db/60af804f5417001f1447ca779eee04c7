@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>샘플 목록</title>
+</head>
+<body>
+	<footer id="footer" data-swiftype-index="false">
+        <hr>
+        <div class="footer_link">
+            <a href="/business/overview/index.do">기업정보</a>
+            <a href="/etc/policy/use/view.do">이용약관</a>
+            <a href="/etc/policy/privacy/view.do" class="priv">개인정보처리방침</a>
+            <a href="/etc/new-store/index.do">매장개설안내</a>
+            <a href="/etc/special-business/index.do">특판사업</a>
+            <a href="/customer/prdct-manual/index.do">고객지원</a>
+            <a href="javascript:cmmCtrl.loginCheckPage('/my-page/buy-auth/index.do')">구매인증센터</a>
+        </div>
+        <hr>
+        <p class="registration">(주)에이스침대 / 사업자등록번호 : 129-81-02666</p> <!-- 2022-02-15 추가 -->
+        <!-- 2021-02-16 수정 -->
+        <p class="address">본사 : 경기도 성남시 중원구 사기막골로 105번길 42(상대원동) / 서울영업본부 : 서울특별시 강남구 도산대로 218  / FAX : 02-544-8788</p>
+        <!-- // 2021-02-16 수정 -->
+
+        <p class="copy">COPYRIGHT (C) ACE BED <br class="only_mob">CORPORATION ALL RIGHTS RESERVED</p>
+        <div class="link_selec">
+            <div class="fam_link_div">
+                <div>
+                    <a href="http://eng.acebed.com" target="_blank">ENGLISH</a>
+                    <a href="http://www.aceavenue.co.kr" target="_blank">에이스 에비뉴</a>
+                    <a href="http://www.aceheritz.com" target="_blank">에이스 헤리츠</a>
+                    <a href="https://acebedmall.co.kr" target="_blank">에이스 침대몰</a>
+                </div>
+                <a href="javascript:" class="close"></a>
+            </div>
+            <a href="javascript:" class="open">FAMILY SITE</a>
+        </div>
+    </footer>
+</body>
+</html>
