@@ -5,22 +5,47 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="path2" value="${pageContext.request.contextPath }" />
+<!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 	<title>Home</title>
+	<style>
+		* {margin: 0px; padding: 0px;
+			font-family: "Jua", sans-serif;
+			font-weight: 500;
+			font-style: normal;  
+			}
+		body {width: 100%; overflow-x: hidden; height: 100vh;}
+		ul {list-style: none;}
+		a {text-decoration: none; color: black;}
+		.mpage { clear:both; width: 100%;  }
+		.mpage:after { content:""; display:block; width:100%; clear:both; }
+		#mpage1 {height: 1000px;}
+	</style>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-<hr>
-	<a href="${path2 }/member/list.do">member 목록</a> <br>
-	<a href="${path2 }/member/join.do">join test</a>
+<footer id="ft">
+		<%@ include file="./include/header.jsp" %>
+</footer>
+	
+	<section class="mpage" id="mpage1">
+		<h1>
+			Hello world!  
+		</h1>
+		
+		<P>  The time on the server is ${serverTime}. </P>
+		<hr>
+			<a href="${path2 }/member/list.do">member 목록</a> <br>
+			<a href="${path2 }/member/join.do">join test</a>
+	</section>
 	
 <footer id="ft">
-		<jsp:include page="./include/footer.jsp"></jsp:include>
+		<%@ include file="./include/footer.jsp" %>
 </footer>
 </body>
 </html>

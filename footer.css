@@ -1,12 +1,14 @@
 @charset "UTF-8";
-
+*{margin: 0px; padding: 0px;}
 footer {
     position: relative;
-    height: 180px;
-    padding: 30px 370px 32px 80px;
+    height: 220px;
+    padding-top: 40px;
+    padding-bottom: 10px;
     background: #ada8a8;
     z-index: 16;
     font-weight: 800;
+    text-align: center;
   }
   
   footer .footer_link {

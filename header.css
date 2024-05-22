@@ -1,0 +1,56 @@
+* {margin: 0px; padding: 0px;
+    font-family: "Jua", sans-serif;
+    font-weight: 500;
+    font-style: normal;  
+    }
+    body {width: 100%; overflow-x: hidden; height: 100vh;}
+    ul {list-style: none;}
+    a {text-decoration: none; color: black;}
+    .page { clear:both; width: 100%; }
+    #page1 {height: 50px;
+        margin-left: 85%;
+        margin-top: 30px;
+    }
+    #page2 {}
+
+    /*header*/
+    .yhd {width: 100%; height: 90px;
+        display: flex;
+        position: fixed;
+        overflow: hidden;
+        justify-content: center; 
+        background-color: rgba(226, 221, 221, 0.3);
+        z-index: 9999;
+    }
+    .ylogo {width: 250px;
+    }
+    .ylogo img { width: 90px; height: 90px;
+        margin-left: 150px;
+    }
+    .ybox {flex-grow: 1;}
+    .ymenu {width: 1300px;
+            display: flex;
+            margin-top: 32px;
+            text-align: center;
+    }
+    .item1>p {width: 180px;}
+    .ymenu>li {float: left;
+            margin-left: 60px;
+            font-size: 30px;
+            color: #333;
+            text-shadow: 0px 0px 2px;
+    }
+    .sub li a {font-size: 20px; color: white;}
+            .item1 p>a {color: white;}
+    .sub {height: 0px; width: 180px; overflow: hidden;}
+    .sub>li {height: 50px; }
+    .ymenu:hover .sub {height: 250px;
+        transition-duration: 1s;
+    }
+    .item1 a::after {display: block;
+            content: "";
+            border-bottom: solid 2px tomato;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;    
+        }
+    .item1 a:hover::after {transform: scaleX(1);}

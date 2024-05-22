@@ -25,4 +25,12 @@
   - Integration Test : Mock Test
   - UI/UX Test : Selenium
 - VCS(Version Control System) : Git/GitHub
-- 
+
+Database table
+  - board(공지사항), member(회원), free(자유게시판), fileboard(자료실), qna(고객센터), product(상품), inventory(재고), sales(판매현황), basket(장바구니)
+
+Header Menu 목록
+1page 
+마이페이지, 로그인, 회원가입 
+2page
+침대, 가구, 스트레스리스, 침대과학, 커뮤니티, 매장 안내
