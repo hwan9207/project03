@@ -19,6 +19,10 @@ public class Member {
 	private	int birth;
 	private String email; 
 	private int tel;
-	private String addr; 
+	private String addr;
+	public Object getId() {
+		// TODO Auto-generated method stub
+		return null;
+	} 
 
 }

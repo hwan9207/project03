@@ -1,0 +1,173 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="hpath" value="${pageContext.servletContext.contextPath }" />
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="${hpath}/WEB-INF/views/css/header.css">
+<meta charset="UTF-8">
+<title>샘플 목록</title>
+<!--  <style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+nav.expanded {
+    height: 200px; /* Adjust as needed for the submenu height */
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu.left {
+    margin-right: auto;
+}
+
+.menu.right {
+    margin-left: auto;
+}
+
+.menu > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height:0px;
+    width: 180px;
+    background-color: #333;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
+.menu:hover .submenu {
+	height : 250px;
+	transition-duration: 1s;
+}
+
+
+.submenu li {
+    display: inline-block;
+    margin: 0;
+}
+
+.submenu a {
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.item1 > a {width: 110px;}
+.item1 a::after {display: block;
+        content: "";
+        border-bottom: solid 2px tomato;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;    
+    }
+.item1 a:hover::after {transform: scaleX(1);}
+
+.item1 a:hover .menu.right{display : none;}
+ </style> -->
+</head>
+<body>
+	<header>
+        <nav>
+            <ul class="menu left">
+                <li class="item1">
+                    <a href="#bed">침&nbsp;&nbsp;&nbsp;대</a>
+                    <ul class="submenu">
+                        <li><a href="#single-bed">싱글 침대</a></li><br>
+                        <li><a href="#double-bed">더블 침대</a></li><br>
+                        <li><a href="#king-bed">킹 사이즈 침대</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#stressless">스트레스리스</a></li>
+                <li class="item1">
+                    <a href="#furniture">가&nbsp;&nbsp;&nbsp;구</a>
+                    <ul class="submenu">
+                        <li><a href="#sofa">소&nbsp;&nbsp;&nbsp;파</a></li><br>
+                        <li><a href="#table">테이블</a></li><br>
+                        <li><a href="#chair">의&nbsp;&nbsp;&nbsp;자</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#bed-science">침대과학</a></li>
+                <li class="item1">
+                    <a href="#community">커뮤니티</a>
+                    <ul class="submenu">
+                        <li><a href="#forum">포&nbsp;&nbsp;&nbsp;럼</a></li><br>
+                        <li><a href="#blog">블로그</a></li><br>
+                        <li><a href="#events">이벤트</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#store-info">매장 안내</a></li>
+            </ul>
+            <ul class="menu right">
+                <li><a href="#my-page">마이페이지</a></li>
+                <li><a href="${hpath }/member/join.jsp">로그인</a></li>
+                <li><a href="#signup">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script type="text/javascript">
+    $(function(){
+        var depth1 = $(".item1"),
+            header = $("header");
+
+            //depth1에 hover header 길이를 300px
+        depth1.mouseenter(function(){
+            header.stop().animate({height:"330px"})
+        }).mouseleave(function(){
+            header.stop().animate({height:"90px"})
+        })
+            //depth1에 hover header 높이를 90px
+    });
+    $(".item1 ").hover(
+            function() {
+                $(".yhd").css("background-color", "#333");
+            },
+            function() {
+                $(".yhd").css("background-color", "");
+            }
+        );
+    </script>
+    
+</body>
+</html>

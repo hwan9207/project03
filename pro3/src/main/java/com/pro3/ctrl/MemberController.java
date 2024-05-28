@@ -24,13 +24,14 @@ public class MemberController {
 	public String getMemberList(Model model) {
 		List<Member> list = memberService.getMemberList();
 		model.addAttribute("list", list);
-		return "member/memberList";
+		return "member/join";
 	}
 	
-	@RequestMapping("join.do")
-	public String insMember(@ModelAttribute Member member, Model model) {
-		memberService.insMember(member);
-		return "member/join";
+	@GetMapping("login.do")
+	public String insMember(Model model, @ModelAttribute("member") Member member) {
+		//memberService.insMember(member);
+		model.addAttribute("member", member);
+		return "member/login";
 	}
 	
 }

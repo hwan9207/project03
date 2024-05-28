@@ -1,162 +1,178 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="hpath" value="${pageContext.servletContext.contextPath }" />
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="${hpath}/resources/css/header.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/c1fb985d35.js" crossorigin="anonymous"></script>
 <meta charset="UTF-8">
-<title>header</title>
-	<style>
-		* {margin: 0px; padding: 0px;
-    font-family: "Jua", sans-serif;
-    font-weight: 500;
-    font-style: normal;  
-    }
-    body {width: 100%; overflow-x: hidden; height: 100vh;}
-    ul {list-style: none;}
-    a {text-decoration: none; color: black;}
-    .page { clear:both; width: 100%; }
-    #page1 {height: 50px;
-        margin-left: 85%;
-        margin-top: 30px;
-    }
-    #page2 {}
+<title>샘플 목록</title>
+<!--  <style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
 
-    /*header*/
-    .yhd {width: 100%; height: 90px;
-        display: flex;
-        position: fixed;
-        overflow: hidden;
-        justify-content: center; 
-        background-color: rgba(226, 221, 221, 0.3);
-        z-index: 9999;
+header {
+    background-color: #333;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    overflow: hidden;
+    transition: height 0.3s;
+}
+
+nav.expanded {
+    height: 200px; /* Adjust as needed for the submenu height */
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu.left {
+    margin-right: auto;
+}
+
+.menu.right {
+    margin-left: auto;
+}
+
+.menu > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    padding: 10px;
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height:0px;
+    width: 180px;
+    background-color: #333;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
+.menu:hover .submenu {
+	height : 250px;
+	transition-duration: 1s;
+}
+
+
+.submenu li {
+    display: inline-block;
+    margin: 0;
+}
+
+.submenu a {
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.item1 > a {width: 110px;}
+.item1 a::after {display: block;
+        content: "";
+        border-bottom: solid 2px tomato;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;    
     }
-    .ylogo {width: 250px;
-    }
-    .ylogo img { width: 90px; height: 90px;
-        margin-left: 150px;
-    }
-    .ybox {flex-grow: 1;}
-    .ymenu {width: 1300px;
-            display: flex;
-            margin-top: 32px;
-            text-align: center;
-    }
-    .item1>p {width: 180px;}
-    .ymenu>li {float: left;
-            margin-left: 60px;
-            font-size: 30px;
-            color: #333;
-            text-shadow: 0px 0px 2px;
-    }
-    .sub li a {font-size: 20px; color: white;}
-            .item1 p>a {color: white;}
-    .sub {height: 0px; width: 180px; overflow: hidden;}
-    .sub>li {height: 50px; }
-    .ymenu:hover .sub {height: 250px;
-        transition-duration: 1s;
-    }
-    .item1 a::after {display: block;
-            content: "";
-            border-bottom: solid 2px tomato;
-            transform: scaleX(0);
-            transition: transform 250ms ease-in-out;    
-        }
-    .item1 a:hover::after {transform: scaleX(1);}
-	</style>
+.item1 a:hover::after {transform: scaleX(1);}
+
+.item1 a:hover .menu.right{display : none;}
+ </style> -->
 </head>
 <body>
-    <section class="page" id="page1">
-        <c:if test="${!empty sid}">
-            <a href="${path1}/member/mypage.do" class="button is-primary">
-                <strong>MyPage</strong>
-            </a>
-            <a href="${path1}/member/logout.do" class="button is-light">
-                LogOut
-            </a>
-        </c:if>
-        <c:if test="${empty sid}">
-            <a href="${path1}/member/term.do" class="button is-primary">
-                <strong>Sign up</strong>
-            </a>
-            <a href="${path1}/member/login.do" class="button is-light">
-                Log in
-            </a>
-        </c:if>
-        <c:if test="${sid.equals('admin')}">
-            <a href="${path1}/member/list.do" class="button is-light">
-                MemberList
-            </a>
-            <a href="${path1}/member/logout.do" class="button is-light">
-                LogOut
-            </a>
-        </c:if>
-    </section>
-    <section class="page" id="page2">
-        <header class="yhd">
-            <div class="ylogo">
-                <a href="${hpath }/index.jsp"><img src="${hpath }/imgs/logo.png" alt="logo"></a>
-            </div>
-            <div class="ybox">
-                <ul class="ymenu">
-                    <li class="item1">
-                        <p><a href="">권역별 관광</a></p> 
-                        <ul class="sub">
-                            <li><a href="${hpath }/north/nmain.jsp" class="dp2">북부권</a></li>
-                            <li><a href="${hpath }/south/smain.jsp" class="dp2">남부권</a></li>
-                            <li><a href="${hpath }/city/cmain.jsp" class="dp2">도심권</a></li>
-                        </ul>
-                    </li>
-                    <li class="item1">
-                        <p><a href="">공&nbsp;&nbsp;연</a></p> 
-                        <ul class="sub">
-                            <li><a href="${hpath }/nori/showList.jsp" class="dp2">공연 목록</a></li>
-                        </ul>
-                    </li>
-                    <li class="item1">
-                        <p><a href="">맛&nbsp;&nbsp;집</a></p> 
-                        <ul class="sub">
-                            <li><a href="${hpath }/restaurant/restaurant.jsp" class="dp2">음식점</a></li>
-                            <li><a href="${hpath }/restaurant/cafe.jsp" class="dp2">카페</a></li>
-                        </ul>
-                    </li>
-                    <li class="item1">
-                        <p><a href="">숙&nbsp;&nbsp;박</a></p> 
-                        <ul class="sub">
-                            <li><a href="${hpath }/accom/accom.jsp" class="dp2">호텔/펜션/캠핑</a></li>
-                        </ul>
-                    </li>
-                    <li class="item1">
-                        <p><a href="">커뮤니티</a></p> 
-                        <ul class="sub">
-                            <li><a href="${hpath }/notice/noti.jsp" class="dp2">공지사항</a></li>
-                            <li><a href="${hpath }/notice/board.jsp" class="dp2">자유게시판</a></li>
-                        </ul>
-                    </li>
-                    <li class="item1">
-                        <p><a href="">마이페이지</a></p> 
-                        <ul class="sub">
-                        <c:if test="${empty sid }">
-                        <li><a href="${hpath }/member/login.jsp">로그인</a></li>
-                        <li><a href="${hpath }/member/join.jsp">회원가입</a></li>
-                        </c:if>
-                        <c:if test="${not empty sid }">
-                        <li><a href="${hpath }/LogOut.do">로그아웃</a></li>
-                        <li><a href="${hpath }/EditMember.do?id=${sid }">회원정보</a></li>
-                        </c:if>
-                        <c:if test="${sid.equals('admin') }">
-                        <li><a href="${hpath }/AdminMain.do">관리자페이지</a></li>
-                        </c:if>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </header>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="${hpath }/js/indexscript.js"></script>
+	<header>
+        <nav>
+            <ul class="menu left">
+                <li class="item1">
+                    <a href="#bed">침&nbsp;&nbsp;&nbsp;대</a>
+                    <ul class="submenu">
+                        <li><a href="#single-bed">싱글 침대</a></li><br>
+                        <li><a href="#double-bed">더블 침대</a></li><br>
+                        <li><a href="#king-bed">킹 사이즈 침대</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#stressless">스트레스리스</a></li>
+                <li class="item1">
+                    <a href="#furniture">가&nbsp;&nbsp;&nbsp;구</a>
+                    <ul class="submenu">
+                        <li><a href="#sofa">소&nbsp;&nbsp;&nbsp;파</a></li><br>
+                        <li><a href="#table">테이블</a></li><br>
+                        <li><a href="#chair">의&nbsp;&nbsp;&nbsp;자</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#bed-science">침대과학</a></li>
+                <li class="item1">
+                    <a href="#community">커뮤니티</a>
+                    <ul class="submenu">
+                        <li><a href="#forum">포&nbsp;&nbsp;&nbsp;럼</a></li><br>
+                        <li><a href="#blog">블로그</a></li><br>
+                        <li><a href="#events">이벤트</a></li>
+                    </ul>
+                </li>
+                <li class="item1"><a href="#store-info">매장 안내</a></li>
+            </ul>
+            <ul class="menu right">
+                <li><a href="#my-page">마이페이지</a></li>
+                <li><a href="${hpath }/member/login.do">로그인</a></li>
+                <li><a href="${hpath }/member/list.do">회원가입</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script type="text/javascript">
+    $(function(){
+        var depth1 = $(".item1"),
+            header = $("header");
+
+            //depth1에 hover header 길이를 300px
+        depth1.mouseenter(function(){
+            header.stop().animate({height:"330px"})
+        }).mouseleave(function(){
+            header.stop().animate({height:"90px"})
+        })
+            //depth1에 hover header 높이를 90px
+    });
+    $(".item1 ").hover(
+            function() {
+                $(".yhd").css("background-color", "#333");
+            },
+            function() {
+                $(".yhd").css("background-color", "");
+            }
+        );
+    </script>
+    
 </body>
 </html>

@@ -29,21 +29,12 @@
 	</style>
 </head>
 <body>
-<footer id="ft">
+<header id="hd">
 		<%@ include file="./include/header.jsp" %>
-</footer>
-	
+</header>
 	<section class="mpage" id="mpage1">
-		<h1>
-			Hello world!  
-		</h1>
 		
-		<P>  The time on the server is ${serverTime}. </P>
-		<hr>
-			<a href="${path2 }/member/list.do">member 목록</a> <br>
-			<a href="${path2 }/member/join.do">join test</a>
 	</section>
-	
 <footer id="ft">
 		<%@ include file="./include/footer.jsp" %>
 </footer>
