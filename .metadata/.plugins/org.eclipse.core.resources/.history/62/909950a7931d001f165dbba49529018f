@@ -1,0 +1,51 @@
+package com.pro3.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pro3.dao.MemberDAO;
+import com.pro3.dto.Member;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	
+	@Autowired
+	private MemberDAO memberDAO;
+
+	@Override
+	public List<Member> getMemberList() {
+		return memberDAO.getMemberList();
+	}
+
+	@Override
+	public Member getMember(String id) {
+		return memberDAO.getMember(id);
+	}
+
+	@Override
+	public int memberCount() {
+		return memberDAO.memberCount();
+	}
+
+	@Override
+	public void insMember(Member member) {
+		memberDAO.insMember(member);
+	}
+
+	@Override
+	public void upMember(Member member) {
+		memberDAO.upMember(member);
+	}
+
+	@Override
+	public void delMember(String id) {
+		memberDAO.delMember(id);
+	}
+	
+	
+}

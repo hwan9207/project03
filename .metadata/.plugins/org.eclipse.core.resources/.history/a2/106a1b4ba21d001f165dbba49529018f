@@ -1,0 +1,30 @@
+package com.pro3.ctrl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.pro3.dto.Free;
+import com.pro3.service.FreeService;
+
+@Controller
+@RequestMapping("/free/")
+public class FreeController {
+
+	@Autowired
+	private FreeService freeService;
+	
+	
+	@GetMapping("freeList.do")
+	public String getFreeList(Model model) {
+		List<Free> freelist = freeService.getFreeList();
+		model.addAttribute("freelist", freelist);
+		return "free/freeList";
+	}
+}
+
+

@@ -11,17 +11,39 @@ import com.pro3.dto.Member;
 @Service
 public class MemberServiceImpl implements MemberService {
 
+	
 	@Autowired
 	private MemberDAO memberDAO;
-	
+
 	@Override
 	public List<Member> getMemberList() {
 		return memberDAO.getMemberList();
 	}
 
 	@Override
-	public void insMember(Member memer) {
-		memberDAO.insMember(memer);
+	public Member getMember(String id) {
+		return memberDAO.getMember(id);
 	}
 
+	@Override
+	public int memberCount() {
+		return memberDAO.memberCount();
+	}
+
+	@Override
+	public void insMember(Member member) {
+		memberDAO.insMember(member);
+	}
+
+	@Override
+	public void upMember(Member member) {
+		memberDAO.upMember(member);
+	}
+
+	@Override
+	public void delMember(String id) {
+		memberDAO.delMember(id);
+	}
+	
+	
 }

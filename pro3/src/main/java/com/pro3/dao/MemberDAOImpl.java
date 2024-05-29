@@ -23,4 +23,24 @@ public class MemberDAOImpl implements MemberDAO {
 	public void insMember(Member member) {
 		sqlSession.insert("member.insMember", member);
 	}
+
+	@Override
+	public Member getMember(String id) {
+		return sqlSession.selectOne(id);
+	}
+
+	@Override
+	public int memberCount() {
+		return sqlSession.selectOne("member.memberCount");
+	}
+
+	@Override
+	public void upMember(Member member) {
+		sqlSession.update("member.upMember");
+	}
+
+	@Override
+	public void delMember(String id) {
+		sqlSession.delete("member.delMember");
+	}
 }

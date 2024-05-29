@@ -1,0 +1,58 @@
+package com.pro3.service;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pro3.dao.MemberDAO;
+import com.pro3.dto.Member;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+
+	private static final Logger log = LoggerFactory.getLogger(MemberServiceImpl.class);
+	
+	@Autowired
+	private MemberDAO memberDAO;
+
+	@Override
+	public List<Member> getMemberList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Member getMember(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int memberCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void insMember(Member member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void upMember(Member member) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delMember(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

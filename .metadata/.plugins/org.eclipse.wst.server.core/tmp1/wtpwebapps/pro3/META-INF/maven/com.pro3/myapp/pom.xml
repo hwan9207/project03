@@ -4,10 +4,11 @@
   <groupId>com.pro3</groupId>
   <artifactId>myapp</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>pro3</name>
   <packaging>war</packaging>
   <properties>
   	<java-version>11</java-version>
-  	<org.springframework-version>5.3.20</org.springframework-version>
+  	<org.springframework-version>5.0.8.RELEASE</org.springframework-version>
   	<org.aspectj-version>1.8.10</org.aspectj-version>
   	<org.slf4j-version>1.7.25</org.slf4j-version>
   </properties>
@@ -17,7 +18,7 @@
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
 			<exclusions>
-				<!-- SLF4j를 위해 Commons Logging을 제외시킴 -->
+				<!-- Exclude Commons Logging in favor of SLF4j -->
 				<exclusion>
 					<groupId>commons-logging</groupId>
 					<artifactId>commons-logging</artifactId>
@@ -166,11 +167,11 @@
 		</dependency>
 		
 		<!--  오라클 jdbc 라이브러리 -->
-		<dependency>
+<!-- 		<dependency>
 		    <groupId>com.oracle.database.jdbc</groupId>
 		    <artifactId>ojdbc11</artifactId>
 		    <version>21.1.0.0</version>
-		</dependency>
+		</dependency> -->
 		
 		<!-- MySQL jdbc 라이브러리 -->
 <!-- 		<dependency>
@@ -180,11 +181,11 @@
 		</dependency> -->
 
 		<!-- MariaDB jdbc 라이브러리 -->
-<!-- 		<dependency>
+ 		<dependency>
 		    <groupId>org.mariadb.jdbc</groupId>
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>3.1.0</version>
-		</dependency> -->
+		</dependency>
 
 		<!-- SQL 구문을 XML로 쉽게 구현하기 위한 MyBatis 라이브러리 -->
 		<dependency>
@@ -210,19 +211,11 @@
 		    <artifactId>jsoup</artifactId>
 		    <version>1.12.1</version>
 		</dependency>
-		<!-- 표준 JSON -->
 		<dependency>
 		    <groupId>org.json</groupId>
 		    <artifactId>json</artifactId>
 		    <version>20200518</version>
 		</dependency>
-		
-		<!-- org.json.simple JSON 라이브러리 -->
-	    <dependency>
-	      <groupId>org.apache.clerezza.ext</groupId>
-	      <artifactId>org.json.simple</artifactId>
-	      <version>0.4</version>
-	    </dependency>
 		
 		<!-- jackson 라이브러리 -->
 		<dependency>
@@ -292,33 +285,6 @@
 		    <artifactId>jaxb-api</artifactId>
 		    <version>2.3.0</version>
 		</dependency>
-		<dependency>
-		    <groupId>javax.annotation</groupId>
-		    <artifactId>javax.annotation-api</artifactId>
-		    <version>1.2</version>
-		</dependency>
-		
-		<!-- 스프링 암호화 라이브러리 -->
-	    <dependency>
-	      <groupId>org.springframework.security</groupId>
-	      <artifactId>spring-security-core</artifactId>
-	      <version>5.4.0</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.springframework.security</groupId>
-	      <artifactId>spring-security-web</artifactId>
-	      <version>5.4.0</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.springframework.security</groupId>
-	      <artifactId>spring-security-config</artifactId>
-	      <version>5.4.0</version>
-	    </dependency>
-	    <dependency>
-	      <groupId>org.springframework.security</groupId>
-	      <artifactId>spring-security-taglibs</artifactId>
-	      <version>5.4.0</version>
-	    </dependency>
   </dependencies>
   <build>
     <plugins>

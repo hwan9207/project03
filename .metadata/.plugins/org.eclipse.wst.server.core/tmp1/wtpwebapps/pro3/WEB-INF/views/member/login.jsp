@@ -17,33 +17,27 @@
 <header id="hd">
 		<%@ include file="../include/header.jsp" %>
 </header>
-    <div class="loginbox">	
-	    <div class="login-container">
-	        <h2>Login</h2>
-	        <form id="login-form">
-	            <input type="text" id="username" name="username" placeholder="Username" required>
-	            <input type="password" id="password" name="password" placeholder="Password" required>
-	            <input type="submit" value="Login">
-	        </form>
-	    </div>
+    <div class="loginbox">
+        <div class="login-container">
+            <h2>로그인</h2>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" name="username" placeholder="아이디를 입력 해주세요." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력 해주세요." required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">로그인</button>
+                </div>
+            </form>
+            <div class="extra-links">
+                <a href="#forgot-password">비밀번호 찾기</a>
+                <a href="#signup">회원가입</a>
+            </div>
+        </div>
     </div>
-
-    <script>
-        document.getElementById("login-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Get username and password values
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Check if username and password are valid (dummy validation for demonstration)
-            if (username === "admin" && password === "admin") {
-                alert("Login successful!");
-                // You can redirect the user to another page here if needed
-            } else {
-                alert("Invalid username or password. Please try again.");
-            }
-        });
-    </script>
 </body>
 </html>

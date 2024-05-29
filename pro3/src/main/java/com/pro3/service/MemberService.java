@@ -6,5 +6,9 @@ import com.pro3.dto.Member;
 
 public interface MemberService {
 	public List<Member> getMemberList();
-	public void insMember(Member memer);
+	public Member getMember(String id);
+	public int memberCount();
+	public void insMember(Member member);
+	public void upMember(Member member);
+	public void delMember(String id);
 }

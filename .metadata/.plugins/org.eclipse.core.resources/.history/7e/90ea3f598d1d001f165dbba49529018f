@@ -1,0 +1,6 @@
+package com.pro3.dao;
+
+public class FreeDAO {
+
+	public List<freeList> get
+}

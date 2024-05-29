@@ -6,4 +6,7 @@
 	<typeAliases>
 		<package name="com.pro3" />
 	</typeAliases>
+	<mappers>
+        <mapper resource="mappers/freeMapper.xml"/>
+    </mappers>
 </configuration>

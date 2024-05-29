@@ -14,12 +14,16 @@ import lombok.ToString;
 public class Member {
 	
 	private String id;
-	private String pw; 
+	private String pw;
 	private String name;
-	private	int birth;
-	private String email; 
-	private int tel;
-	private String addr;
+	private String email;
+	private String tel;
+	private String addr1;
+	private String addr2;
+	private String postcode;
+	private String birth;
+	private int point;
+	private String regdate;
 	public Object getId() {
 		// TODO Auto-generated method stub
 		return null;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="free">
+ 	
+	<select id="getFreeList" resultType="com.pro3.dto.Free">
+		select * from free order by no desc
+	</select>
+	
+	<!-- 글 제목으로 검색시 조회 -->
+	<select id="getFree" parameterType="String" resultType="com.pro3.dto.Free">
+		select * from free where title=#{title}
+	</select>
+	
+	<!-- 글 작성자 이름으로 검색시 조회 (freeMem 뷰를 생성해서 조회할거임)-->
+	<select id="getFree2" parameterType="String" resultType="com.pro3.dto.Free">
+		select * from freeMem where name=#{name}
+	</select>
+	
+	<!-- 글 작성자 id로 검색시 조회 (freeMem 뷰를 생성해서 조회할거임)-->
+	<select id="getFree3" parameterType="String" resultType="com.pro3.dto.Free">
+		select * from freeMem where id=#{id}
+	</select>
+
+	<select id="totalFreeCount">
+		select count(*) from free 
+	</select>
+	
+	<insert id="insFree">
+		insert into free values(default, title=#{title}, content=#{content}, visited=#{visited}, default)
+	</insert>
+	
+	<update id="upvisit">
+		update free set visited=visited+1 where no=#{no}
+	</update>
+	
+	<update id="upFree">
+		update free set title=#{title}, content=#{content} where no=#{no}
+	</update>
+	
+	<delete id="delFree">
+		delete from free where no=#{no}
+	</delete>
+</mapper>

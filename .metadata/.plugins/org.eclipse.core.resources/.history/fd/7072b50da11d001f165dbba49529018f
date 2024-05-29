@@ -1,0 +1,18 @@
+package com.pro3.dao;
+
+import java.util.List;
+
+import com.pro3.dto.Free;
+
+public interface FreeDAO {
+
+	public List<Free> getFreeList();
+	public Free getFree(String title);
+	public Free getFree2(String name);
+	public Free getFree3(String id);
+	public int totalFreeCount();
+	public void insFree(Free free);
+	public void upvisit(int no);
+	public void upFree(Free free);
+	public void delFree(int no);
+}
